@@ -1,0 +1,103 @@
+body{
+    background-color: rgb(0, 0, 0);
+    color: rgb(75, 75, 75);
+    font-family: 'Pacifico', cursive;
+}
+h1{
+    font-size: 72px; 
+    -webkit-margin-after: 0;
+}
+h2{
+    font-size: 48px;   
+}
+#container{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+}
+#header{
+    margin: 0px;
+    padding: 0px;
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 300px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#happinessScale{
+    margin: 0px;
+    padding: 0px;
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 1.0);
+    height: 300px;
+    text-align: center;
+}
+#label{
+    flex: 1;  
+}
+#scale{
+    display: flex;   
+}
+#rangeContainer{
+    flex: 1;   
+}
+#slider{
+    -webkit-appearance: none;
+    outline: none!important;
+    margin-top: 20px;
+    height: 10px;
+    width: 400px;
+    border: solid white 1px;
+    border-radius: 5px;
+}
+#sliderLabel{
+    font-size: 36px;  
+    display: block;
+}
+#level{
+    font-size: 24px;   
+}
+.rangeCircle{  
+}
+#selectMood{
+    margin: 0px;
+    padding: 0px;
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.4);
+    height: 300px;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.dropdownMenu{
+    font-size: 60px;
+    padding: 10px;
+}
+#confirmation{
+    background: yellow;
+    display: none;
+}
+input{
+    font-size: 32px;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+}
+
+@media all and (min-width: 800px){
+    #container {padding: 60px;}
+}
+
+@media all and (max-width: 800px){
+    #container {padding: 40px;}
+    #selectMood{height: 340px;}
+}
+
+@media all and (max-width: 600px){
+    #container {padding: 20px;}   
+    #slider {width: 200px;}
+    #selectMood{height: 360px;}
+}

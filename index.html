@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <script src="jquery.js"></script>
+        <script src="script.js"></script>
+        <link rel="stylesheet" type="text/csss" href="style.css">
+        <title>Mood Tracker</title>
+    </head>
+    <body>
+        <div id="inputStatement">
+            <form action="http://localhost:1337/status" method="post">
+                <h2>Today I am 
+                    <select name="mood-menu" class="dropdownMenu">
+                        <option disabled>Select Mood</option>
+                        <option data-mood="happy">Happy</option>
+                        <option data-mood="angry">Angry</option>
+                        <option data-mood="excited">Excited</option>
+                    </select>
+                because of 
+                    <select name="trigger-menu" class="dropdownMenu">
+                        <option disabled>Select Mood Trigger</option>
+                        <option data-mood="chocolate">Chocolate</option>
+                        <option data-mood="the weather">The Weather</option>
+                        <option data-mood="my work">a Promotion</option>
+                    </select>
+                </h2>
+                <button type="submit" value="Submit">Record</button>
+            </form>
+            <p id="confirmation">Your current mood has been submitted</p>
+            
+        </div>
+        
+    </body>
+</html>

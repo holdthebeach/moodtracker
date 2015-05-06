@@ -1,0 +1,59 @@
+<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<%
+    var colorArray = ["#BF2A13", "#E85F31", "#E0D72D", "#35C710", "#2D39E0", "#962DE0"];
+    var color = colorArray[Math.floor(Math.random()*colorArray.length)];
+%>
+<style>
+    body{ 
+        background-color: <%=color%>
+    }
+    #slider{
+        background-color: <%=color%>   
+    }
+</style>
+<div id="container">    
+    <div id="header">
+        <h1>MoodPath</h1>
+
+    </div>
+
+    <form action="/status" method="post"> 
+        <div id = "happinessScale">
+                <div class="label">
+                    <label id = "sliderLabel" for=fader>Happiness Level</label>
+                </div>
+                <div class="scale">
+                    <input id = "slider" type="range" min=0 max=10 value=5 id="fader" step=1 oninput="outputUpdate(value)">
+                    <output for=fader id="level" name="happy">5</output>
+                </div>
+        </div>
+
+
+        <div id="selectMood">
+                        <h2>Today I am 
+                            <input id="mood-input" name="mood" list="mood-menu" placeholder="What's your mood? " autocomplete="off"/>
+                            <datalist id="mood-menu" class="dropdownMenu">
+
+                                <%for(var index in sails.config.restrict.mood){  %>
+
+                                <option value="<%=sails.config.restrict.mood[index] %>">
+
+
+                                <% } %>
+
+
+                            </datalist>
+                        because of 
+                            <input id="trigger-input" name="trigger" list="trigger-menu" placeholder="Why?" autocomplete="off"/>
+                            <datalist id="trigger-menu" class="dropdownMenu">
+                                <%for(var index in sails.config.restrict.trigger){%>
+                                    <option value="<%=sails.config.restrict.trigger[index]%>">
+                                <%}%>
+                            </datalist>
+                        </h2>
+                        <button type="submit" value="Submit" disabled>Record</button>
+                        <input id="recordBgColor" type="hidden" name="color-shown" value="<%=color%>">
+                    </form>
+
+        </div>
+</div>
